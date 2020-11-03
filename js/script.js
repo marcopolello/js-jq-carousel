@@ -1,25 +1,35 @@
 $(document).ready(function(){
 
-    window.addEventListener("keydown", function() {
-      switch (event.key) {
-        case "ArrowLeft":
-        // console.log("tasto sinistro");
-        prevImg();
-          break;
-        case "ArrowRight":
-        // console.log("tasto destro");
+    // window.addEventListener("keydown", function() {
+    //   switch (event.key) {
+    //     case "ArrowLeft":
+    //     // console.log("tasto sinistro");
+    //     prevImg();
+    //       break;
+    //     case "ArrowRight":
+    //     // console.log("tasto destro");
+    //     nextImg();
+    //       break;
+    //     case "ArrowUp":
+    //     // console.log("tasto destro");
+    //     nextImg();
+    //       break;
+    //     case "ArrowDown":
+    //     // console.log("tasto destro");
+    //     prevImg();
+    //       break;
+    //   }
+    // });
+
+    // KEYWORD UTILIZZANDO JQUERY
+    $(document).keydown(function(key) {
+      if (key.keyCode === 39) {
         nextImg();
-          break;
-        case "ArrowUp":
-        // console.log("tasto destro");
-        nextImg();
-          break;
-        case "ArrowDown":
-        // console.log("tasto destro");
+      } else if (key.keyCode === 37) {
         prevImg();
-          break;
       }
     });
+
 
   //al click del div con classe next faccio partire funzione next
   $('div.next').click(nextImg)
