@@ -58,6 +58,14 @@ $(document).ready(function(){
       // mi sposto classe active da fratello a fratello
       imgActive.next("img").addClass('active');
     }
+    // sposta il pallino verso destra
+    var circleActive = $('i.active')
+    circleActive.removeClass('active')
+    if (circleActive.hasClass('last')) {
+      $('i.first').addClass('active');
+    } else {
+      circleActive.next("i").addClass('active');
+    }
   }
 
   //funzione per tornare all'img precedente
@@ -74,22 +82,14 @@ $(document).ready(function(){
     } else {// altrimenti torno all'img precedente spostando active all'indietro
       imgActive.prev("img").addClass('active');
     }
-  }
+    // sposta pallino verso sinistra
+    var circleActive = $('i.active');
+    circleActive.removeClass('active');
 
-  // funzione freccia sinistra
-  function arrow() {
-    var eventPress = eventPress || window.event;
-    if (eventPress == '38') {
-      console.log("freccia su");
-    }
-    else if (eventPress == '40') {
-      console.log("freccia giu");
-    }
-    else if (eventPress == '37') {
-      console.log("freccia sx");
-    }
-    else if (eventPress == '39') {
-      console.log("freccia dx");
+    if(circleActive.hasClass('first')){
+      $('i.last').addClass('active');
+    } else {
+      circleActive.prev("i").addClass('active');
     }
   }
 });
