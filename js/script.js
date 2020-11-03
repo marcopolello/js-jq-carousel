@@ -35,7 +35,7 @@ $(document).ready(function(){
   $('div.next').click(nextImg)
   //al click del div con classe prev faccio partire funzione prev
   $('div.prev').click(prevImg)
-  // al keypress nella pagina
+
 
 
   // FUNZIONI
