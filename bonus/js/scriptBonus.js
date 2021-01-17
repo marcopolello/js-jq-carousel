@@ -22,10 +22,10 @@ $(document).ready(function(){
     // });
 
     // KEYWORD UTILIZZANDO JQUERY
-    $(document).keydown(function(key) {
-      if (key.keyCode === 39) {
+    $(document).keydown(function(e) {
+      if (e.keyCode === 39) {
         nextImg();
-      } else if (key.keyCode === 37) {
+      } else if (e.keyCode === 37) {
         prevImg();
       }
     });
@@ -41,39 +41,30 @@ $(document).ready(function(){
   // al click dei pallini voglio che corrisponda la sua img
   // ATTIVAZIONE PRIMA IMG
   $('.nav i:first-child').click(function(){
-    // $('.images img')removeClass('active');
     $('.nav i').removeClass('active');
     $(this).addClass('active');
-    $('.images img:nth-child(2)').removeClass('active');
-    $('.images img:nth-child(3)').removeClass('active');
+    $('.images img').removeClass('active');
     $('.images img:first-child').addClass('active');
-    $('.images img:last-child').removeClass('active');
   });
   // ATTIVAZIONE SECONDA IMG
   $('.nav i:nth-child(2)').click(function(){
     $('.nav i').removeClass('active');
     $(this).addClass('active');
+    $('.images img').removeClass('active');
     $('.images img:nth-child(2)').addClass('active');
-    $('.images img:nth-child(3)').removeClass('active');
-    $('.images img:first-child').removeClass('active');
-    $('.images img:last-child').removeClass('active');
   });
   // ATTIVAZIONE TERZA IMG
   $('.nav i:nth-child(3)').click(function(){
     $('.nav i').removeClass('active');
     $(this).addClass('active');
+    $('.images img').removeClass('active');
     $('.images img:nth-child(3)').addClass('active');
-    $('.images img:nth-child(2)').removeClass('active');
-    $('.images img:first-child').removeClass('active');
-    $('.images img:last-child').removeClass('active');
   });
   // ATTIVAZIONE QUARTA IMG
   $('.nav i:last-child').click(function(){
     $('.nav i').removeClass('active');
     $(this).addClass('active');
-    $('.images img:nth-child(3)').removeClass('active');
-    $('.images img:nth-child(2)').removeClass('active');
-    $('.images img:first-child').removeClass('active');
+    $('.images img').removeClass('active');
     $('.images img:last-child').addClass('active');
   });
 
